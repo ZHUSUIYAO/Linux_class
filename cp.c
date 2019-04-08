@@ -10,7 +10,7 @@
 int main(int argc,char *argv[])
 {
 	int fd_src,fd_des;//fd_src为读取文件 fd_des为写入文件
-        char buf[4096];    //128大小的缓冲区
+        char buf[4096];    //4096大小的缓冲区
         int num;
         if(argc-3)  //cp  file_src  file_des 检查输入参数个数是否正确
         {
@@ -33,7 +33,7 @@ int main(int argc,char *argv[])
  
         do                                                     
         {
-                num=read(fd_src,buf,128);//读取文件
+                num=read(fd_src,buf,4096);//读取文件
                 write(fd_des,buf,num);   //写入文件
         }while(num==4096);
 
